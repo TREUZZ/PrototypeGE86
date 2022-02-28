@@ -8,7 +8,7 @@
     'description': """
     """,
 
-    'author': "Ilias SAKR & Noé MOUQUET",
+    'author': "GE-Qualité",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
