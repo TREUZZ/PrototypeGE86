@@ -1,8 +1,7 @@
 from odoo import model
 
 class Etudiant(models.Model):
-    _name = "etudiant"
-    _inherit = "prototype.personne"
+    _inherit = "personne.model"
 
     num_etu = fields.integer(required=True)
     ecole = fields.Char(required=True)
