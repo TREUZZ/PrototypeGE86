@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_prototype_alternant,prototype.alternant,model_prototype_alternant,,1,1,1,1
+access_prototype_etudiant,prototype.etudiant,model_prototype_etudiant,,1,1,1,1
+access_prototype_salarie,prototype.salarie,model_prototype_salarie,,1,1,1,1

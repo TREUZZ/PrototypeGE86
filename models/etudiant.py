@@ -2,7 +2,7 @@ from odoo import models,fields
 
 class Etudiant(models.Model):
     _name = 'prototype.etudiant'
-    _inherit = "personne.model"
+    _inherit = 'prototype.personne'
 
 
     num_etu = fields.Integer(string='Numéro d\'étudiant',required=True)
