@@ -6,29 +6,29 @@
 		<record model="ir.ui.view" id="alternant_tree_view">
 			<field name="name">Liste des Alternants</field>
 			<field name="model">prototype.alternant</field>
-			<field name="inherit_id" ref="prototype.salarie_tree_view"/>
+			<field name="inherit_id" ref="salarie_tree_view"/>
 			<field name="arch" type="xml">
 				<tree>
-					<xpath expr="//field[@name='entreprise']" position="after">
-						<field name="type_contrat"/>
-						<field name="num_etu"/>
-						<field name="ecole"/>
-						<field name="note"/>
-					</xpath>
+					<!-- <xpath expr="//field[@name='entreprise']" position="after"> -->
+					<field name="type_contrat"/>
+					<field name="num_etu"/>
+					<field name="ecole"/>
+					<field name="note"/>
+					<!-- </xpath> -->
 				</tree>
 			</field>
 		</record>
 
 		<!-- Formulaire des alternants : "form" view -->
 		<record model="ir.ui.view" id="alternant_form_view">
-			<field name="name">Formulaire des alternants</field>
+			<field name="name">Formulaire d'alternant</field>
 			<field name="model">prototype.alternant</field>
-			<field name="inherit_id" ref="prototype.salarie_form_view"/>
+			<field name="inherit_id" ref="salarie_form_view"/>
 			<field name="arch" type="xml">
 				<form string="Alternant">
 					<sheet>
 						<group>
-							<xpath expr="//field[@name='entreprise']" position="before">
+							<xpath expr="//field[@name='entreprise']" position="after">
 								<field name="type_contrat"/>
 								<field name="num_etu"/>
 								<field name="ecole"/>
@@ -47,7 +47,6 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 
-		<menuitem name="Liste des alternants" id="menu_app_alternant" sequence="20" action="prototype.action_windows_alternant"/>
-
+		<menuitem name="Alternants" parent="menu_app_base" id="submenu_app_alternant" action="action_window_alternant"/>
 	</data>
 </odoo>

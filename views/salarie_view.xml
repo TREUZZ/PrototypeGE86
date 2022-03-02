@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <odoo>
 	<data>
 		<!-- Les salaries -->
 		<!-- Liste des salries : "tree" vue -->
 		<record model="ir.ui.view" id="salarie_tree_view">
-			<tree>
 				<field name="name">Liste des Salarie</field>
 				<field name="model">prototype.salarie</field>
-				<field name="inherit_id" ref="prototype.personne_tree_view"/>
+				<field name="inherit_id" ref="personne_tree_view"/>
 				<field name="arch" type="xml">
-					<xpath expr="//field[@name='prenom']" position="after">
+					<tree>
+					<!-- <xpath expr="//field[@name='prenom']" position="after"> -->
 						<field name="salaire"/>
 						<field name="entreprise"/>
-					</xpath>
+					<!-- </xpath> -->
+					</tree>
 				</field>
-			</tree>
 		</record>
 
 		<!-- Formulaire des salarie : "form" view -->
 		<record model="ir.ui.view" id="salarie_form_view">
 			<field name="name">Formulaire des salaries</field>
 			<field name="model">prototype.salarie</field>
-			<field name="inherit_id" ref="prototype.personne_form_view"/>
+			<field name="inherit_id" ref="personne_form_view"/>
 			<field name="arch" type="xml">
-				<form string="Salarie">
+				<form>
 					<sheet>
 						<group>
-							<xpath expr="//field[@name='nom']" position="after">
+							<xpath expr="//field[@name='prenom']" position="after">
 								<field name="salaire"/>
 								<field name="entreprise"/>
 							</xpath>
@@ -44,7 +45,7 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 
-		<menuitem name="Liste des salariés" id="menu_app_salarie" sequence="20" action="prototype.action_windows_salarie"/>
+		<menuitem name="Salariés" parent="menu_app_base" id="submenu_app_salarie" action="action_window_salarie"/>
 
 	</data>
 </odoo>

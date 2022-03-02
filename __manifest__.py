@@ -20,7 +20,8 @@
     'data' : [
         'security/ir.model.access.csv',
         'views/personne_view.xml',
-        'views/alternant_view.xml',
-        'views/salarie_view.xml'
+        'views/salarie_view.xml',
+        'views/etudiant_view.xml',
+        'views/alternant_view.xml'
     ]
 }

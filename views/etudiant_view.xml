@@ -3,51 +3,45 @@
     <data>
     <!-- Les salaries -->
     <!-- Formulaire des étudiants : "tree" view -->
-        <record id="inherited_view_personne_tree" model="ir.ui.view">
-            <tree>
-                <field name="name">prototype.personne.tree</field>
-                <field name="model">prototype.personne</field>
-                <field name="inherit_id" ref="inherited.personne_tree_view" />
+        <record id="view_etudiant_tree" model="ir.ui.view">
+                <field name="name">prototype.etudiant</field>
+                <field name="model">prototype.etudiant</field>
+                <field name="inherit_id" ref="personne_tree_view" />
                 <field name="arch" type="xml">
-                    <xpath expr="//field[@name='nom']" position="after">
-                        <field name="num_etu">Numéro étudiant</field>
-                        <field name="ecole">Ecole</field>
-                        <field name="note">Moyenne</field>
-                    </xpath>
-                <field name="num_etu"/>
-                <field name="ecole"/>
-                <field name="note"/>
-            </tree>
+                    <tree>
+                        <field name="num_etu"/>
+                        <field name="ecole"/>
+                        <field name="note"/>
+                    </tree>
+                </field>
         </record>
 
     <!-- Formulaire des étudiants : "form" view -->
-        <record id="inherited_view_personne_form" model="ir.ui.view">
-            <field name="name">prototype.personne.form</field>
-            <field name="name">prototype.personne</field>
-            <field name="inherit_id" ref="prototype.personne_form_view"/>
+        <record id="view_etudiant_form" model="ir.ui.view">
+            <field name="name">prototype.etudiant</field>
+            <field name="model">prototype.etudiant</field>
+            <field name="inherit_id" ref="personne_form_view"/>
             <field name="arch" type="xml">    
-                <form string="Etudiant">
-                    <sheet>
-                        <group>
-                            <xpath expr="//field[@name='nom']" position="after">
-                                <field name="num_etu"/>
-                                <field name="ecole"/>
-                                <field name="note"/>
-                            </xpath>
-                        </group>
-                    </sheet>
+                <form>
+                    <group>
+                        <xpath expr="//field[@name='nom']" position="after">
+                            <field name="num_etu"/>
+                            <field name="ecole"/>
+                            <field name="note"/>
+                        </xpath>
+                    </group>
                 </form>
             </field>
         </record>
 
         <!--Action lors de l'ouverture de la vue pour la liste des etudiants -->
-		<record model="ir.actions.act_window" id="action_window_salarie">
+		<record model="ir.actions.act_window" id="action_window_etudiant">
 			<field name="name">Liste des étudiants</field>
 			<field name="res_model">prototype.etudiant</field>
 			<!--Permet d'intégrer les différentes vues -->
 			<field name="view_mode">tree,form</field>
 		</record>
 
-        <menuitem name="Liste des étudiants" id="menu_app_étudiants" sequence="20" action="prototype.action_windows_etudiant"/>
+        <menuitem name="Etudiants" parent="menu_app_base" id="menu_app_étudiants" sequence="20" action="action_window_etudiant"/>
     </data>
 </odoo>

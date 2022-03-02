@@ -8,8 +8,8 @@
             <field name="model">prototype.personne</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="nom" />
-                    <field name="prenom" />
+                    <field name="nom"/>
+                    <field name="prenom"/>
                 </tree>
             </field>
         </record>
@@ -41,6 +41,8 @@
             <!--Permet d'intégrer les différentes vues -->
             <field name="view_mode">tree,form</field>
         </record>
+
+        <menuitem name="Liste des personnes" id="menu_app_base"/>
 
     </data>
 </odoo>
