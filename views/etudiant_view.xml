@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="inherited_view_personne_tree" model="ir.ui.view">
+        <tree>
+            <field name="name">prototype.personne.tree</field>
+            <field name="model">prototype.personne</field>
+            <field name="inherit_id" ref="inherited.personne_tree_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='nom']" position="after">
+                    <field name="num_etu">Numéro étudiant</field>
+                    <field name="ecole">Ecole</field>
+                    <field name="note">Moyenne</field>
+                </xpath>
+            <field name="num_etu"/>
+            <field name="ecole"/>
+            <field name="note"/>
+        </tree>
+    </record>
+</odoo>
