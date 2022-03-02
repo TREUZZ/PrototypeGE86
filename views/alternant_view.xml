@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+		<!-- Les alternants -->
+		<!-- Liste des alternants : "tree" vue -->
+		<record model="ir.ui.view" id="alternant_tree_view">
+			<field name="name">Liste des Alternants</field>
+			<field name="model">prototype.alternant</field>
+			<field name="inherit_id" ref="prototype.salarie_tree_view"/>
+			<field name="arch" type="xml">
+				<tree>
+					<xpath expr="//field[@name='entreprise']" position="after">
+						<field name="type_contrat"/>
+						<field name="num_etu"/>
+						<field name="ecole"/>
+						<field name="note"/>
+					</xpath>
+				</tree>
+			</field>
+		</record>
+
+		<!-- Formulaire des alternants : "form" view -->
+		<record model="ir.ui.view" id="alternant_form_view">
+			<field name="name">Formulaire des alternants</field>
+			<field name="model">prototype.alternant</field>
+			<field name="inherit_id" ref="prototype.salarie_form_view"/>
+			<field name="arch" type="xml">
+				<form string="Alternant">
+					<sheet>
+						<group>
+							<xpath expr="//field[@name='entreprise']" position="before">
+								<field name="type_contrat"/>
+								<field name="num_etu"/>
+								<field name="ecole"/>
+								<field name="note"/>
+							</xpath>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_window_alternant">
+			<field name="name">Liste des alternants</field>
+			<field name="res_model">prototype.alternant</field>
+			<!--Permet d'intégrer les différentes vues -->
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Liste des alternants" id="menu_app_alternant" sequence="20" action="prototype.action_windows_alternant"/>
+
+	</data>
+</odoo>

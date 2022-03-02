@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+		<!-- Les salaries -->
+		<!-- Liste des salries : "tree" vue -->
+		<record model="ir.ui.view" id="salarie_tree_view">
+			<tree>
+				<field name="name">Liste des Salarie</field>
+				<field name="model">prototype.salarie</field>
+				<field name="inherit_id" ref="prototype.personne_tree_view"/>
+				<field name="arch" type="xml">
+					<xpath expr="//field[@name='prenom']" position="after">
+						<field name="salaire"/>
+						<field name="entreprise"/>
+					</xpath>
+				</field>
+			</tree>
+		</record>
+
+		<!-- Formulaire des salarie : "form" view -->
+		<record model="ir.ui.view" id="salarie_form_view">
+			<field name="name">Formulaire des salaries</field>
+			<field name="model">prototype.salarie</field>
+			<field name="inherit_id" ref="prototype.personne_form_view"/>
+			<field name="arch" type="xml">
+				<form string="Salarie">
+					<sheet>
+						<group>
+							<xpath expr="//field[@name='nom']" position="after">
+								<field name="salaire"/>
+								<field name="entreprise"/>
+							</xpath>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!--Action lors de l'ouverture de la vue pour la liste des personnes -->
+		<record model="ir.actions.act_window" id="action_window_salarie">
+			<field name="name">Liste des salariés</field>
+			<field name="res_model">prototype.salarie</field>
+			<!--Permet d'intégrer les différentes vues -->
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Liste des salariés" id="menu_app_salarie" sequence="20" action="prototype.action_windows_salarie"/>
+
+	</data>
+</odoo>
