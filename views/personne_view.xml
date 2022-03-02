@@ -2,50 +2,48 @@
     <data>
     <!-- Les Personnes (Abstract) -->
     <!-- Liste des personnes : "tree" vue -->
-    <record model="ir.ui.view" id="personne_tree_view">
-        <field name="name">Liste des Personnes</field>
-        <field name="model">prototype.personne</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="nom"/>
-                <field name="prenom"/>
-            </tree>
-        </field>
-    </record>
-
-    <record model="ir.ui.view" id="personne_form_view">
-		<field name="name">prototype.personne_form_view</field>
-		<field name="model">prototype.personne</field>
-		<field name="arch" type="xml">
-			<form string="Personne">
-				<sheet>
-					<div class="oe_title">
-						<h2>
-							<field name="nom" placeholder="Nom de la Personne"/>
-						</h2>
-					</div>
-					<group>
-						<group>
-							<field name="nom" />
-							<field name="prenom" />
-						</group>
-					</group>
-				</sheet>
-				<div class="oe_chatter">
-					<field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user"/>
-					<field name="message_ids"/> 
-				</div>
-			</form>
-		</field>
-	</record>
-    <!-- Action lors de l'ouverture de la vue pour la liste des deplacement -->
-	<record model="ir.actions.act_window" id="action_window_deplacement">
-		<field name="name">Liste des Deplacements</field>
-		<field name="res_model">ge_prototype.deplacement</field>
-		<!-- Permet d'intégrer les différentes vues -->
-		<field name="view_mode">tree,form</field>
-		<field name="context">{"search_default_mes_deplacement" : 1}</field>
-	</record>
+        <record model="ir.ui.view" id="personne_tree_view">
+            <field name="name">Liste des Personnes</field>
+            <field name="model">prototype.personne</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nom"/>
+                    <field name="prenom"/>
+                </tree>
+            </field>
+        </record>
+<!-- 
+        <record model="ir.ui.view" id="personne_form_view">
+            <field name="name">prototype.personne_form_view</field>
+            <field name="model">prototype.personne</field>
+            <field name="arch" type="xml">
+                <form string="Personne">
+                    <sheet>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="nom" placeholder="Nom de la Personne"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <field name="nom" />
+                            <field name="prenom" />
+                        </group>
+                    </sheet>
+                     <div class="oe_chatter">
+                        <field name="message_follower_ids" options="{'post_refresh':True}" groups="base.group_user"/>
+                        <field name="message_ids"/> 
+                    </div> 
+                </form>
+            </field>
+        </record>
+-->
+         <!--Action lors de l'ouverture de la vue pour la liste des personnes -->
+        <record model="ir.actions.act_window" id="action_window_personne">
+            <field name="name">Liste des personnes</field>
+            <field name="res_model">prototype.personne</field>
+             <!--Permet d'intégrer les différentes vues -->
+            <field name="view_mode">tree</field>
+        </record>
 
     </data>
 </odoo>

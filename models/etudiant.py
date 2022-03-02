@@ -4,6 +4,7 @@ from odoo import models,fields
 class Etudiant(models.Model):
     _name = 'prototype.etudiant'
     _inherit = 'prototype.personne'
+    _description = 'Ceci est une classe représentant un étudiant'
 
 
     num_etu = fields.Integer(string='Numéro d\'étudiant',required=True)

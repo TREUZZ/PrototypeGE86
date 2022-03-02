@@ -3,9 +3,10 @@ from odoo import models, fields
 class Salarie(models.Model):
     _name = 'prototype.salarie'
     _inherit = 'prototype.personne'
+    _description = 'Ceci est une classe représentant un salarié'
 
     salaire = fields.Float(string="Salaire de la personne",required=True)
-    entreprise = fields.Char(string="Nom de l'entreprise",required=True, tracking=True)
+    entreprise = fields.Char(string="Nom de l'entreprise",required=True)
 
     def modificationSalaire(self,pourcentage_augmentation):
         '''
