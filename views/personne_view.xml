@@ -1,45 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
-        <!-- Les Personnes (Abstract) -->
-        <!-- Liste des personnes : "tree" vue -->
-        <record model="ir.ui.view" id="personne_tree_view">
-            <field name="name">Liste des Personnes</field>
-            <field name="model">prototype.personne</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="nom"/>
-                    <field name="prenom"/>
-                </tree>
-            </field>
-        </record>
 
         <record model="ir.ui.view" id="personne_form_view">
             <field name="name">prototype.personne_form_view</field>
             <field name="model">prototype.personne</field>
             <field name="arch" type="xml">
                 <form string="Personne">
-                    <sheet>
+                    <sheet name="personne">
                         <div class="oe_title">
                             <h2>
                                 <field name="nom" placeholder="Nom de la Personne"/>
                             </h2>
                         </div>
                         <group>
-                            <field name="nom" />
                             <field name="prenom" />
+                            <field name="active" invisible="1" />
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
 
+        
+
         <!--Action lors de l'ouverture de la vue pour la liste des personnes -->
         <record model="ir.actions.act_window" id="action_window_personne">
             <field name="name">Liste des personnes</field>
             <field name="res_model">prototype.personne</field>
             <!--Permet d'intégrer les différentes vues -->
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">form</field>
         </record>
 
         <menuitem name="Liste des personnes" id="menu_app_base"/>

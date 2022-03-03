@@ -4,11 +4,12 @@
     <!-- Les salaries -->
     <!-- Formulaire des étudiants : "tree" view -->
         <record id="view_etudiant_tree" model="ir.ui.view">
-                <field name="name">prototype.etudiant</field>
+                <field name="name">prototype.etudiant.tree_view</field>
                 <field name="model">prototype.etudiant</field>
-                <field name="inherit_id" ref="personne_tree_view" />
                 <field name="arch" type="xml">
                     <tree>
+                        <field name="nom"/>
+						<field name="prenom"/>
                         <field name="num_etu"/>
                         <field name="ecole"/>
                         <field name="note"/>
@@ -18,7 +19,7 @@
 
     <!-- Formulaire des étudiants : "form" view -->
         <record id="view_etudiant_form" model="ir.ui.view">
-            <field name="name">prototype.etudiant</field>
+            <field name="name">prototype.etudiant.form_view</field>
             <field name="model">prototype.etudiant</field>
             <field name="inherit_id" ref="personne_form_view"/>
             <field name="arch" type="xml">    

@@ -4,24 +4,22 @@
 		<!-- Les alternants -->
 		<!-- Liste des alternants : "tree" vue -->
 		<record model="ir.ui.view" id="alternant_tree_view">
-			<field name="name">Liste des Alternants</field>
+			<field name="name">prototype.alternant.tree_view</field>
 			<field name="model">prototype.alternant</field>
-			<field name="inherit_id" ref="salarie_tree_view"/>
+			<!-- <field name="inherit_id" ref="prototype.salarie_tree_view"> -->
 			<field name="arch" type="xml">
 				<tree>
-					<!-- <xpath expr="//field[@name='entreprise']" position="after"> -->
-					<field name="type_contrat"/>
-					<field name="num_etu"/>
-					<field name="ecole"/>
-					<field name="note"/>
-					<!-- </xpath> -->
+					<field name="nom"/>
+					<field name="prenom"/>
+					<field name="salaire"/>
+					<field name="entreprise"/>
 				</tree>
 			</field>
 		</record>
 
 		<!-- Formulaire des alternants : "form" view -->
 		<record model="ir.ui.view" id="alternant_form_view">
-			<field name="name">Formulaire d'alternant</field>
+			<field name="name">prototype.alternant.form_view</field>
 			<field name="model">prototype.alternant</field>
 			<field name="inherit_id" ref="salarie_form_view"/>
 			<field name="arch" type="xml">

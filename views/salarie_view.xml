@@ -5,29 +5,28 @@
 		<!-- Les salaries -->
 		<!-- Liste des salries : "tree" vue -->
 		<record model="ir.ui.view" id="salarie_tree_view">
-				<field name="name">Liste des Salarie</field>
+				<field name="name">prototype.salarie.tree_view</field>
 				<field name="model">prototype.salarie</field>
-				<field name="inherit_id" ref="personne_tree_view"/>
 				<field name="arch" type="xml">
 					<tree>
-					<!-- <xpath expr="//field[@name='prenom']" position="after"> -->
+						<field name="nom"/>
+						<field name="prenom"/>
 						<field name="salaire"/>
 						<field name="entreprise"/>
-					<!-- </xpath> -->
 					</tree>
 				</field>
 		</record>
 
 		<!-- Formulaire des salarie : "form" view -->
 		<record model="ir.ui.view" id="salarie_form_view">
-			<field name="name">Formulaire des salaries</field>
+			<field name="name">prototype.salarie.form_view</field>
 			<field name="model">prototype.salarie</field>
 			<field name="inherit_id" ref="personne_form_view"/>
 			<field name="arch" type="xml">
 				<form>
 					<sheet>
 						<group>
-							<xpath expr="//field[@name='prenom']" position="after">
+							<xpath expr="//sheet[@name='personne']" position="after">
 								<field name="salaire"/>
 								<field name="entreprise"/>
 							</xpath>
